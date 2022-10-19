@@ -101,7 +101,7 @@ class Add_Products_Variations {
      */
     public function pre_get_posts( $query ) {
 
-        if ( is_admin() ) {
+        if ( is_admin() || ! is_shop() || ! is_main_query() ) {
             return $query;
         }
 
